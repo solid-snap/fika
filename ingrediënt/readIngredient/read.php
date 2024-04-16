@@ -1,13 +1,12 @@
-<!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../../style.css">
     </head>
     <body>
         <div class="sidebar">
 
             <div class="technologo">
-                <a href="index.php"><img src="Images/technolab.png" alt="TechnoLab"></a>
+                <a href="index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
                 <li><a href="Land">Landen</a></li>
@@ -17,8 +16,11 @@
             </ul>
         </div>
         <div class="content">
-
-
+            <?php
+            require "../../ingrediënt.php";
+            $ingrediënt = new ingrediënt();
+            $ingrediënt ->read();
+            ?>
         </div>
     </body>
 </html>
