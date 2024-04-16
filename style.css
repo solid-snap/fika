@@ -1,0 +1,48 @@
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+}
+.content {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+}
+.sidebar .technologo img {
+    margin-top: 10px;
+    width: 80px; /* Adjust as needed */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #555;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+/* Content area styles */
+.content {
+    margin-left: 250px; /* Adjust with the sidebar width */
+    padding: 20px;
+}
