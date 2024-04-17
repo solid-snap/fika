@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="nl">
-    <head>
-    </head>
+        <head>
+            <link rel="stylesheet" href="../../style.css">
+        </head>
         <body>
-        <h1>Read Persoon</h1>
         <div class="sidebar">
+
             <div class="technologo">
-                <a href="../../index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
+                <a href="../../Index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
-                <li><a href="../../index.php">Home</a></li>
-                <li><a href="../../Aanwezigheid_Crud">Aanwezigheid</a></li>
-                <li><a href="../../Werknemers_Crud">Werknemers</a></li>
-                <li><a href="../../veranderingen">Veranderingen</a></li>
+                <li><a href="../create/createpersoon1.php">Maken</a></li>
+                <li><a href="../delete/deletePersoon1.php">Verwijderen</a></li>
+                <li><a href="../read/readPersoon.php">Lezen</a></li>
+                <li><a href="../search/searchPersoon1.php">Opzoeken</a></li>
+                <li><a href="../update/updatePersoon1.php">Updaten</a></li>
             </ul>
         </div>
-                <?php
-                require "persoon.php";
-                $persoon = new persoon();
-                $persoon->readPersoon();
-                ?>
+        <div class="content">
+            <?php
+            require "../../persoon.php";
+            $persoon = new persoon();
+            $persoon->readPersoon();
+            ?>
+        </div>
     </body>
 </html>
 

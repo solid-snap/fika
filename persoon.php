@@ -1,5 +1,5 @@
 <?php
-require_once "../dbConnect.php";
+require_once "dbConnect.php";
 
 class persoon
 {
@@ -7,9 +7,6 @@ class persoon
     // properties ------
     public $naam;
 
-
-
-    //method -- functions
     // constructor
     function __construct( $naam = NULL)
     {
@@ -34,32 +31,32 @@ class persoon
         echo $this->get_naam();
         echo "<br/>";
     }
-// createAanwezigheid-methode:
+// createPersoon-methode:
 //voegt een nieuwe user toe aan de database
 //Het haalt de waarden van de eigenschappen op en voert een SQL-invoegquery uit.
     public function createPersoon()
     {
         global $conn;
-        // info from the objects into the statements
+        // info van de objecten naar statements
         $Id = NULL;
         $naam = $this->get_naam();
 
-        // prepares statement from the table
+        // voorbereid de statements van de tabel
         $sql = $conn->Prepare("insert into persoon
 values (:Id,:naam)");
-// variables into the statement
+// variablen naar  statements
         $sql->bindParam(":Id", $Id);
         $sql->bindParam(":naam", $naam);
         $sql->execute();
         //melding
-        echo "!: </br>";
+        echo "Deze persoon is toegevoegd!</br>";
 
     }
 // deze methode wordt niet gebruikt
     public function readPersoon()
     {
         global $conn;
-        // makes statement
+        // maakt een statement
         $sql = $conn->prepare(" SELECT * FROM persoon");
         $sql->execute();
         foreach ($sql as $persoon) {
@@ -68,8 +65,8 @@ values (:Id,:naam)");
             echo $persoon["naam"] . " - ";
         }
     }
-//searchWerknemers-methode:
-//Deze methode zoekt een  user op basis van $Werknemers_Id en toont de info
+//searchPersoon-methode:
+//Deze methode zoekt een  user op basis van $Id en toont de info
 // Het voert een SQL-query uit met een parameter om de route te selecteren..
     public function searchPersoon($Id)
     {
@@ -77,16 +74,16 @@ values (:Id,:naam)");
         // sql statement
         $sql = $conn->prepare("select * from persoon
                                where Id = :Id");
-        // variables into the statement
+        // variables naar  statement
         $sql->bindParam(":Id", $Id);
         $sql->execute();
-        // info from the array in object and prints it
+        //  info van de array in het object en print het uit
         foreach ($sql as $persoon) {
             echo $persoon["Id"] . "<br>";
             echo $this->naam = $persoon["naam"] . "<br>";
         }
     }
-//deleteAanwezigheid-methode:
+//deletePersoon-methode:
 //Deze methode verwijdert een user uit de database met een  gegeven id
 // het voert een SQL-verwijderquery uit met een parameter om de route te verwijderen..
     public function deletePersoon($Id)
@@ -95,17 +92,17 @@ values (:Id,:naam)");
         //statements
         $sql = $conn->prepare(" DELETE FROM persoon
         where Id = :Id");
-        // puts variables into the statement
+        //  zet de variable naar statement
         $sql->bindParam(":Id", $Id);
         $sql->execute();
     }
-//updateAanwezigheid-methode:
+//updatePersoon-methode:
 //Deze methode werkt de gegevens van een bestaande user in de database bij op basis van id
 // Het voert een SQL-updatequery uit om de gegevens van de route te updaten
     public function updatePersoon($Id)
     {
         global $conn;
-        // puts info from the variables into the statement
+        // veranderd info van de variables naar  statements
         $Id;
         $naam = $this->get_naam();
 
@@ -116,7 +113,7 @@ values (:Id,:naam)");
 									set naam= :naam 
 									where Id= :Id
 								 ");
-        // variables into the statements
+        // variables naar statements
 
         $sql->bindParam(":Id", $Id);
         $sql->bindParam(":naam", $naam);

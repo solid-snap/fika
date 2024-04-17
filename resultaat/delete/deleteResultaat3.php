@@ -10,10 +10,10 @@
                 <a href="../../Index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
-                <li><a href="../../land">Landen</a></li>
-                <li><a href="../../ingrediënt">Ingrediënten</a></li>
-                <li><a href="../../persoon">Personen</a></li>
-                <li><a href="../../resultaat">Resultaten</a></li>
+                <li><a href="../create/createResultaat1.php">Maken</a></li>
+                <li><a href="../delete/deleteResultaat1.php">Verwijderen</a></li>
+                <li><a href="../read/readResultaat.php">Lezen</a></li>
+                <li><a href="../update/updateResultaat1.php">Updaten</a></li>
             </ul>
         </div>
         <div class="content">
@@ -24,11 +24,11 @@
             $delete = $_POST["deleteBox"];
 
             if ($delete == "ja") {
-                echo "The Resultaatbeen deleted <br/>";
+                echo "Het Resultaat is verwijderd. <br/>";
                 $resultaat = new resultaat();
                 $resultaat->deleteResultaat($Id);
             } else {
-                echo "The Resultaat hasn't been deleted. <br/>";
+                echo "Het Resultaat is niet verwijderd. <br/>";
             }
             ?>
         </div>

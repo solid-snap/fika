@@ -7,17 +7,16 @@
         <div class="sidebar">
 
             <div class="technologo">
-                <a href="index.php"><img src="Images/technolab.png" alt="TechnoLab"></a>
+                <a href="Index.php"><img src="Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
-                <li><a href="Land">Landen</a></li>
-                <li><a href="Ingrediënt">Ingrediënten</a></li>
-                <li><a href="Persoon">Personen</a></li>
-                <li><a href="Resultaat">Resultaten</a></li>
+                <li><a href="land">Landen</a></li>
+                <li><a href="ingrediënt">Ingrediënten</a></li>
+                <li><a href="persoon/persoonIndex.php">Personen</a></li>
+                <li><a href="resultaat/resultaatIndex.php">Resultaten</a></li>
             </ul>
         </div>
         <div class="content">
-
 
         </div>
     </body>
