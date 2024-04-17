@@ -4,7 +4,6 @@
     </head>
     <body>
         <div class="sidebar">
-
             <div class="technologo">
                 <a href="index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
@@ -19,18 +18,18 @@
             <?php
             require "../../ingrediënt.php";
 
-
-            // uitlezen vakjes van Create1 -----
+            // gegevens uit de array in variabelen stoppen
+            $Id = $_POST["Id"];
             $naam = $_POST["naam"];
 
 
-            // maken object -------------------------------
-            $ingrediënt = new ingrediënt($naam);
-            $ingrediënt->create();
-
-
+            //  object ---------------------------------------------------
+            $ingrediënt = new ingrediënt($naam); //object maken
+            $ingrediënt->update($Id);		           // verander tabel info en object info
+            echo "This is the updated information: <br/>";
+            echo $Id ."<br/>";
+            $ingrediënt->afdrukken();
             ?>
-        </div>
+         </div>
     </body>
 </html>
-
