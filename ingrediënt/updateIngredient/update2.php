@@ -4,7 +4,6 @@
     </head>
     <body>
         <div class="sidebar">
-
             <div class="technologo">
                 <a href="index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
@@ -18,19 +17,23 @@
         <div class="content">
             <?php
             require "../../ingrediënt.php";
+            $Id = isset($_POST["Id"]) ? $_POST["Id"] : null;
 
 
-            // uitlezen vakjes van Create1 -----
-            $naam = $_POST["naam"];
 
+            $ingrediënt = new ingrediënt(); // object maken
+            $ingrediënt->search($Id);
 
-            // maken object -------------------------------
-            $ingrediënt = new ingrediënt($naam);
-            $ingrediënt->create();
-
+            // properties in variabel
+            $naam = $ingrediënt->get_naam();
 
             ?>
+
+            <form action="update3.php" method="post">
+                <input type="hidden" name="Id" value="<?php echo strip_tags("$Id <br>"); ?>">
+                <input type="text" name="naam" value="<?php echo strip_tags("$naam <br>"); ?>"><br>
+                <input type="submit"><br>
+            </form>
         </div>
     </body>
 </html>
-

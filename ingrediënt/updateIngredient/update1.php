@@ -22,9 +22,9 @@
             $sql->execute();
             $ingredient= $sql->fetchAll();
             ?>
-            <form action="search2.php" method="post">
+            <form action="update2.php" method="post">
                 <label for="ingredient">wat?</label>
-                <select id="ingredient" name="id">
+                <select id="ingredient" name="Id">
                     <?php
                     foreach ($ingredient as $i) {
                         echo "<option value=" . $i['Id'] . ">" . $i['naam'] . "</option>";
@@ -37,3 +37,4 @@
         </div>
     </body>
 </html>
+

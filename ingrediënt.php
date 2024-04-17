@@ -65,24 +65,22 @@ class ingrediënt
         $sql = $conn->prepare("SELECT * from ingrediënt");
         $sql->execute();
 
-        // Start table
         echo "<table border='1'>";
         echo "<tr><th>ID</th><th>Naam</th></tr>";
 
         foreach ($sql as $ingrediënt) {
-            // Start a new row
+
             echo "<tr>";
 
-            // Output data in table cells
             echo "<td>" . $ingrediënt["Id"] . "</td>";
             echo "<td>" . $ingrediënt["naam"] . "</td>";
 
 
-            // End the row
+
             echo "</tr>";
         }
 
-        // End the table
+
         echo "</table>";
     }
 
@@ -93,8 +91,8 @@ class ingrediënt
         $sql->execute([":Id" => $Id]);
         foreach ($sql as $ingrediënt) {
 
-            echo $this->naam = $ingrediënt["naam"] . "<br>";
-
+            echo $this->naam = $ingrediënt["naam"]."<br>";
+            echo $this->Id = $ingrediënt["Id"];
         }
 
     }

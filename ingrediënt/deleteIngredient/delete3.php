@@ -4,7 +4,6 @@
     </head>
     <body>
         <div class="sidebar">
-
             <div class="technologo">
                 <a href="index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
@@ -19,18 +18,15 @@
             <?php
             require "../../ingrediënt.php";
 
+            $Id = $_POST["Id"];
+            $delete = $_POST["deleteBox"];
 
-            // uitlezen vakjes van Create1 -----
-            $naam = $_POST["naam"];
-
-
-            // maken object -------------------------------
-            $ingrediënt = new ingrediënt($naam);
-            $ingrediënt->create();
-
-
+            if ($delete == "ja") {
+                $ingrediënt = new ingrediënt();
+                $ingrediënt->delete($Id);
+            } else {
+            }
             ?>
         </div>
     </body>
 </html>
-
