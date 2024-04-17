@@ -1,13 +1,12 @@
-<!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../../style.css">
     </head>
     <body>
         <div class="sidebar">
 
             <div class="technologo">
-                <a href="index.php"><img src="Images/technolab.png" alt="TechnoLab"></a>
+                <a href="index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
                 <li><a href="Land">Landen</a></li>
@@ -17,8 +16,12 @@
             </ul>
         </div>
         <div class="content">
-
-
+            <form action="search2.php" method="post">
+                <label for="id">id:</label>
+                <input type="text" id="id" name="id">
+                <input type="submit">
+                <br>
+            </form>
         </div>
     </body>
 </html>
