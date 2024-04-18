@@ -11,7 +11,7 @@
             </div>
             <ul>
                 <li><a href="land">Landen</a></li>
-                <li><a href="ingrediënt">Ingrediënten</a></li>
+                <li><a href="ingrediënt/ingredientIndex.php">Ingrediënten</a></li>
                 <li><a href="persoon/persoonIndex.php">Personen</a></li>
                 <li><a href="resultaat/resultaatIndex.php">Resultaten</a></li>
             </ul>
