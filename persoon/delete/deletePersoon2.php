@@ -20,17 +20,17 @@
         <div class="content">
             <?php
             require "../../persoon.php";
-            $Id = $_POST["IdField"];
+            $Id = $_POST["Id"];
             $persoon = new persoon();
             $persoon->searchPersoon($Id);
             ?>
-            <form action="deletePersoon3.php" method="POST">
-                <!-- $id kan niet worden veranderd -->
+
+            <form action="deletePersoon3.php" method="post">
                 <input type="hidden" name="IdField" value=" <?php echo $Id ?> ">
-                <!-- 2x deleteBox  -->
+                <!-- 2x verwijderBox om nee of ja door te kunnen geven -->
                 <input type="hidden" name="deleteBox" value="nee">
                 <input type="checkbox" name="deleteBox" value="ja">
-                <label for="deleteBox">Verwijder deze persoon.</label><br/><br/>
+                <label for="deleteBox">verwijder deze persoon</label><br/><br/>
                 <input type="submit"><br/><br/>
             </form>
         </div>

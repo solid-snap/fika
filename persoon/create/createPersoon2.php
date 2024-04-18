@@ -19,15 +19,13 @@
         </div>
         <div class="content">
                 <?php
+
                 require "../../persoon.php";
-
                 $naam= $_POST ["naamField"];
-
 
                 // maken object -------------------------------
                 $persoon = new persoon($naam);
                 $persoon ->createPersoon();
-
                 // afdrukken object ---------------------------
                 ?>
         </div>

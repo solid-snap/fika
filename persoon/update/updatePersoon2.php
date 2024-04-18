@@ -20,7 +20,7 @@
         <div class="content">
             <?php
             require "../../persoon.php";                    // gebruikt om object aan te maken
-            $Id = $_POST["IdField"];
+            $Id = isset($_POST["Id"]) ? $_POST["Id"] : null;
             $persoon = new persoon();                // maakt object
             $persoon->searchPersoon($Id);
 

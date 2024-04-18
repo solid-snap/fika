@@ -17,10 +17,23 @@
             </ul>
         </div>
         <div class="content">
-            <form action="updateResultaat2.php" method="POST">
-                <label for="Id">Id:</label>
-                <input type="text" id = "Id" name="IdField">
-                <input type="submit">
+            <?php
+            require "../../dbConnect.php";
+            $sql = $conn->prepare("SELECT * FROM resultaat");
+            $sql->execute();
+            $resultaat= $sql->fetchAll();
+            ?>
+            <form action="updateResultaat2.php" method="post">
+                <label for="resultaat">Wat wil je aanpassen?</label>
+                <select id="resultaat" name="Id">
+                    <?php
+                    foreach ($resultaat as $i) {
+                        echo "<option value=" . $i['Id'] . ">" . $i['Id'] .  "</option>";
+                    }
+                    ?>
+                </select>
+                <br>
+                <input type="submit" value="verzenden">
             </form>
         </div>
     </body>
