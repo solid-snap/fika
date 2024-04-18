@@ -5,7 +5,6 @@
     </head>
     <body>
         <div class="sidebar">
-
             <div class="technologo">
                 <a href="../Index.php"><img src="../Images/technolab.png" alt="TechnoLab"></a>
             </div>
@@ -18,7 +17,6 @@
             </ul>
         </div>
         <div class="content">
-
         </div>
     </body>
 </html>

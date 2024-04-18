@@ -36,7 +36,7 @@
                 $rLand= $land->fetchAll();
             ?>
             <div class="randomizer">
-                <form action="resultaat/create/createResultaat2.php" method="post">
+                <form action="randomizer.php" method="post">
                     <label for="persoon">wie?</label>
                     <select id="persoon" name="persoonIdField">
                         <?php
