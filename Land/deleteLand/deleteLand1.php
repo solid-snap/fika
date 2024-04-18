@@ -19,12 +19,24 @@
 </div>
 <div class="content">
     <h1>Verwijder een land</h1>
-<form action="deleteLand2.php" method="POST">
-    <label for="Id">Id:</label>
-    <input type="text" id="id" name="IdField">
-    <input type="submit">
-    <br>
-</form>
+    <?php
+    require "../../dbConnect.php";
+    $sql = $conn->prepare("SELECT * FROM land");
+    $sql->execute();
+    $land= $sql->fetchAll();
+    ?>
+    <form action="deleteLand2.php" method="post">
+        <label for="land">wat?</label>
+        <select id="land" name="IdField">
+
+            <?php
+            foreach ($land as $l) {
+                echo "<option value=" . $l['Id'] . ">" . $l['naam'] . "</option>";
+            }
+            ?>
+        </select>
+        <br>
+        <input type="submit" value="verzenden">
 </div>
 </body>
 </html>

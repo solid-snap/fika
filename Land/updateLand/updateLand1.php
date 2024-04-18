@@ -17,12 +17,24 @@
     </ul>
 </div>
 <div class="content">
-    <h1>Update Land</h1>
-<form action="updateLand2.php" method="POST">
-    <label for="Id">Id:</label>
-    <input type="text" id = "Id" name="IdField">
-    <input type="submit">
-</form>
+    <h1>Update een land</h1>
+    <?php
+    require "../../dbConnect.php";
+    $sql = $conn->prepare("SELECT * FROM land");
+    $sql->execute();
+    $land= $sql->fetchAll();
+    ?>
+    <form action="updateLand2.php" method="post">
+        <label for="land">wat?</label>
+        <select id="land" name="IdField">
+            <?php
+            foreach ($land as $l) {
+                echo "<option value=" . $l['Id'] . ">" . $l['naam'] . "</option>";
+            }
+            ?>
+        </select>
+        <br>
+        <input type="submit" value="verzenden">
 </div>
 </body>
 <html>
