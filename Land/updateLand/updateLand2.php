@@ -1,10 +1,10 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<h1>Create Land</h1>
+<h1>Update Werknemers</h1>
 <div class="sidebar">
     <div class="technologo">
         <a href="../../Index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
@@ -18,18 +18,26 @@
     </ul>
 </div>
 <div class="content">
+    <h1>Dit land updaten?</h1>
+
     <?php
-    require "../../land.php";
+require "../../land.php";                    // needed to make an object
+$Id = $_POST["IdField"];
+$land = new land();                // makes object
+$land->searchLand($Id);
 
-    $naam = $_POST ["landField"];
+// properties in variables
+$naam = $land->get_naam();
 
+?>
 
-    // maken object -------------------------------
-    $land = new land($naam);
-    $land->createLand();
+<form action="updateLand3.php" method="post">
+    <!-- $id cant be changed -->
+    <input type="hidden" name="IdField" value="<?php echo strip_tags("$Id <br>"); ?>"><br>
+    <input type="text" name="naamField" value="<?php echo strip_tags("$naam <br>"); ?>"><br>
 
-    // afdrukken object ---------------------------
-    ?>
-</body>
+    <input type="submit"><br>
+</form>
 </div>
+</body>
 </html>

@@ -4,19 +4,21 @@
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-<h1>Read land</h1>
+
 <div class="sidebar">
     <div class="technologo">
         <a href="../../Index.php"><img src="../../Images/technolab.png" alt="TechnoLab"></a>
     </div>
     <ul>
-        <li><a href="Land">Landen</a></li>
-        <li><a href="Ingrediënt">Ingrediënten</a></li>
-        <li><a href="Persoon">Personen</a></li>
-        <li><a href="Resultaat">Resultaten</a></li>
+        <li><a href="../createLand/createLand1.php">Maken</a></li>
+        <li><a href="../deleteLand/deleteLand1.php">Verwijderen</a></li>
+        <li><a href="../readLand/readLand.php">Lezen</a></li>
+        <li><a href="../searchLand/searchLand1.php">Opzoeken</a></li>
+        <li><a href="../updateLand/updateLand1.php">Updaten</a></li>
     </ul>
 </div>
 <div class="content">
+    <h1>Alle landen</h1>
 <?php
 require "../../land.php";
 $land = new land();

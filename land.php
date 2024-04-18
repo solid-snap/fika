@@ -1,6 +1,6 @@
 <?php
 require_once "dbConnect.php";
-
+//  Een class definieert de eigenschappen  properties en methoden  die objecten van die class zullen hebben.
 class land
 {
 
@@ -12,11 +12,11 @@ class land
 
 
     //method -- functions
-    // constructor
+    // constructor maakt iets aan
     function __construct($naam = NULL)
     {
         $this->naam = $naam;
-
+//$this verwijst naar de class Hierdoor kun je verschillende eigenschappen instellen, ophalen methoden aanroepen methoden.
 
 
     }
@@ -33,7 +33,7 @@ class land
     }
 
 
-    // getters halen waarden van opbject op
+    // getters halen waarden van object op
     function get_Id()
     {
         return $this->Id;
@@ -55,35 +55,35 @@ class land
 
     }
 // createWerknemers-methode:
-//voegt een nieuwe user toe aan de database
+//voegt een nieuw land toe aan de database
 //Het haalt de waarden van de eigenschappen op en voert een SQL-invoegquery uit.
     public function createLand()
     {
         global $conn;
-        // info from the objects into the statements
+        // info van het object in statement plaatsen
         $Id = NULL;
         $naam = $this->get_naam();
 
 
-        // prepares statement from the table
+        // statement van de tabel voorbereiden
         $sql = $conn->Prepare("insert into land
 values (:Id,:naam)");
-// variables into the statement
+// variablen in statement plaatsen
         $sql->bindParam(":Id", $Id);
         $sql->bindParam(":naam", $naam);
 
         $sql->execute();
 
-        echo "gelukt";
+        echo "Land is toegevoegd";
         //melding
 
 
     }
-// deze methode wordt niet gebruikt
+// readLand-methode: leest alles op uit de database
     public function readLand()
     {
         global $conn;
-        // makes statement
+        // maakt statement
         $sql = $conn->prepare(" SELECT * FROM land");
         $sql->execute();
         foreach ($sql as $land) {
@@ -93,8 +93,8 @@ values (:Id,:naam)");
 
         }
     }
-//searchWerknemers-methode:
-//Deze methode zoekt een  user op basis van $Werknemers_Id en toont de info
+//searchLand-methode:
+//Deze methode zoekt een land op basis van $Id en toont de info
 // Het voert een SQL-query uit met een parameter om de route te selecteren..
     public function searchLand($Id)
     {
@@ -102,36 +102,36 @@ values (:Id,:naam)");
         // sql statement
         $sql = $conn->prepare("select * from land
                                where Id = :Id");
-        // variables into the statement
+        // variables in statement plaatsen
         $sql->bindParam(":Id", $Id);
         $sql->execute();
-        // info from the array in object and prints it
+        // info van de  array in object en print het uit
         foreach ($sql as $land) {
             echo $land["Id"] . "<br>";
             echo $this->naam = $land["naam"] . "<br>";
 
         }
     }
-//deleteWerknemers-methode:
-//Deze methode verwijdert een user uit de database met een  gegeven id
-// het voert een SQL-verwijderquery uit met een parameter om de route te verwijderen..
+//deleteLand-methode:
+//Deze methode verwijdert een user uit de database met een gegeven id
+// het voert een SQL-verwijderquery uit met een parameter om een land te verwijderen..
     public function deleteLand($Id)
     {
         global $conn;
         //statements
         $sql = $conn->prepare(" DELETE FROM land
         where Id = :Id");
-        // puts variables into the statement
+        //  variables in de statement
         $sql->bindParam(":Id", $Id);
         $sql->execute();
     }
-//updateWerknemers-methode:
-//Deze methode werkt de gegevens van een bestaande user in de database bij op basis van id
-// Het voert een SQL-updatequery uit om de gegevens van de route te updaten
+//updateLand-methode:
+//Deze methode werkt de gegevens van een bestaand land in de database bij op basis van id
+// Het voert een SQL-updatequery uit om de gegevens van het land te updaten
     public function updateLand($Id)
     {
         global $conn;
-        // puts info from the variables into the statement
+        //  info van  variables in statement plaatsen
         $Id;
         $naam = $this->get_naam();
 
@@ -141,7 +141,8 @@ values (:Id,:naam)");
 									set naam= :naam  
 									where Id= :Id
 								 ");
-        // variables into the statements
+        // variables in statements plaatsen
+        //Bind parameters zijn de placeholders in een prepared statement die later worden ingevuld met waarden.
 
         $sql->bindParam(":Id", $Id);
         $sql->bindParam(":naam", $naam);
