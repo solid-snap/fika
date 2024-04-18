@@ -20,7 +20,7 @@
         <div class="content">
             <?php
             require "../../persoon.php";
-            $Id = $_POST["IdField"];
+            $Id = $_POST["Id"];
             $persoon = new persoon();
             $persoon->searchPersoon($Id);
             ?>

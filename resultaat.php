@@ -17,6 +17,7 @@ class resultaat
     }
 // setters plaatsen waarde in object
 
+
     function set_persoonId($persoonId)
     {
         $this->persoonId = $persoonId;
@@ -93,16 +94,28 @@ class resultaat
         // maakt statement
         $sql = $conn->prepare(" SELECT * FROM resultaat");
         $sql->execute();
+
+        echo "<table border='1'>";
+        echo "<tr><th>ID</th><th>persoonId</th><th>landId</th><th>ingrediëntId</th></tr>";
+
         foreach ($sql as $resultaat) {
-            echo $resultaat["Id"] . " - ";                         //
-            $this->set_persoonId($resultaat["persoonId"]);
-            echo $resultaat["persoonId"] . " - ";
-            $this->set_landId($resultaat["landId"]);
-            echo $resultaat["landId"] . " - ";
-            $this->set_ingredientId($resultaat["ingredientId"]);
-            echo $resultaat["ingredientId"] . " - ";
+
+            echo "<tr>";
+
+            echo "<td>" . $resultaat["Id"] . "</td>";
+            echo "<td>" . $resultaat["persoonId"] . "</td>";
+            echo "<td>" . $resultaat["landId"] . "</td>";
+            echo "<td>" . $resultaat["ingredientId"] . "</td>";
+
+
+
+            echo "</tr>";
         }
-    }
+
+
+        echo "</table>";
+        }
+
 //searchResultaat-methode:
 //Deze methode zoekt een  user op basis van $Werknemers_Id en toont de info
 // Het voert een SQL-query uit met een parameter om de route te selecteren..

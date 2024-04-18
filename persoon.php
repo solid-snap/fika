@@ -59,11 +59,23 @@ values (:Id,:naam)");
         // maakt een statement
         $sql = $conn->prepare(" SELECT * FROM persoon");
         $sql->execute();
+        echo "<table border='1'>";
+        echo "<tr><th>ID</th><th>Naam</th></tr>";
+
         foreach ($sql as $persoon) {
-            echo $persoon["Id"] . " - ";                         //
-            $this->set_naam($persoon["naam"]);
-            echo $persoon["naam"] . " - ";
+
+            echo "<tr>";
+
+            echo "<td>" . $persoon["Id"] . "</td>";
+            echo "<td>" . $persoon["naam"] . "</td>";
+
+
+
+            echo "</tr>";
         }
+
+
+        echo "</table>";
     }
 //searchPersoon-methode:
 //Deze methode zoekt een  user op basis van $Id en toont de info

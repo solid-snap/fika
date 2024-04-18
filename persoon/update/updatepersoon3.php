@@ -20,16 +20,18 @@
         <div class="content">
             <?php
             require "../../persoon.php";
+
             // gegevens uit de array in variabelen stoppen
             $Id = $_POST["IdField"];
             $naam = $_POST["naamField"];
-            //  object ---------------------------------------------------
-            $persoon = new persoon($naam); //  object
-            $persoon->updatePersoon($Id);		           // veranderd de table info en object info
-            echo "Dit is de geupdaten informatie: <br/>";
-            echo $Id ."<br/>";
-            $persoon->afdrukken();	                       // prints object
 
+
+            //  object ---------------------------------------------------
+            $persoon = new persoon($naam); //object maken
+            $persoon->updatePersoon($Id);		           // verander tabel info en object info
+            echo "This is the updated information: <br/>";
+            echo $Id ."<br/>";
+            $persoon->afdrukken();
             ?>
         </div>
     </body>

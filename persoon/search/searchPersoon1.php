@@ -18,11 +18,23 @@
             </ul>
         </div>
         <div class="content">
-            <form action="searchPersoon2.php" method="POST">
-                <label for="Id">Id:</label>
-                <input type="text" id="Id" name="IdField">
-                <input type="submit">
+            <?php
+            require "../../dbConnect.php";
+            $sql = $conn->prepare("SELECT * FROM persoon");
+            $sql->execute();
+            $persoon= $sql->fetchAll();
+            ?>
+            <form action="searchPersoon2.php" method="post">
+                <label for="persoon">Wie wil je hebben?</label>
+                <select id="persoon" name="id">
+                    <?php
+                    foreach ($persoon as $p) {
+                        echo "<option value=" . $p['Id'] . ">" . $p['naam'] . "</option>";
+                    }
+                    ?>
+                </select>
                 <br>
+                <input type="submit" value="verzenden">
             </form>
         </div>
     </body>

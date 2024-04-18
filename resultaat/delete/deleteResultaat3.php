@@ -20,7 +20,7 @@
             <?php
             require "../../resultaat.php";
 
-            $Id = $_POST["IdField"];
+            $Id = $_POST["Id"];
             $delete = $_POST["deleteBox"];
 
             if ($delete == "ja") {
