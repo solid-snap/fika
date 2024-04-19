@@ -20,7 +20,7 @@
     <h1>Update een land</h1>
     <?php
     require "../../dbConnect.php";
-    $sql = $conn->prepare("SELECT * FROM land");
+    $sql = $conn->prepare("SELECT * FROM Land");
     $sql->execute();
     $land= $sql->fetchAll();
     ?>

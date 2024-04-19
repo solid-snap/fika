@@ -9,7 +9,7 @@
                 <a href="Index.php"><img src="Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
-                <li><a href="land">Landen</a></li>
+                <li><a href="Land">Landen</a></li>
                 <li><a href="ingrediënt/ingredientIndex.php">Ingrediënten</a></li>
                 <li><a href="persoon/persoonIndex.php">Personen</a></li>
                 <li><a href="resultaat/resultaatIndex.php">Resultaten</a></li>

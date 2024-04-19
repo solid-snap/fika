@@ -25,11 +25,11 @@ $Id = $_POST["IdField"];
 $delete = $_POST["deleteBox"];
 
 if ($delete == "ja") {
-    echo "Het land is verwijderd <br/>";
+    echo "Het Land is verwijderd <br/>";
     $land = new land();
     $land->deleteLand($Id);
 } else {
-    echo "Het land is nog niet verwijderd. <br/>";
+    echo "Het Land is nog niet verwijderd. <br/>";
 }
 ?>
 </body>

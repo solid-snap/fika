@@ -10,7 +10,7 @@
                 <a href="Index.php"><img src="Images/technolab.png" alt="TechnoLab"></a>
             </div>
             <ul>
-                <li><a href="land">Landen</a></li>
+                <li><a href="Land/landIndex.php">Landen</a></li>
                 <li><a href="ingrediënt/ingredientIndex.php">Ingrediënten</a></li>
                 <li><a href="persoon/persoonIndex.php">Personen</a></li>
                 <li><a href="resultaat/resultaatIndex.php">Resultaten</a></li>
@@ -31,7 +31,7 @@
                 $persoon->execute();
                 $rpersoon= $persoon->fetchAll();
 
-                $land = $conn->prepare("SELECT * FROM land ORDER BY RAND() LIMIT 1");
+                $land = $conn->prepare("SELECT * FROM Land ORDER BY RAND() LIMIT 1");
                 $land->execute();
                 $rLand= $land->fetchAll();
             ?>

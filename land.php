@@ -55,7 +55,7 @@ class land
 
     }
 // createWerknemers-methode:
-//voegt een nieuw land toe aan de database
+//voegt een nieuw Land toe aan de database
 //Het haalt de waarden van de eigenschappen op en voert een SQL-invoegquery uit.
     public function createLand()
     {
@@ -66,7 +66,7 @@ class land
 
 
         // statement van de tabel voorbereiden
-        $sql = $conn->Prepare("insert into land
+        $sql = $conn->Prepare("insert into Land
 values (:Id,:naam)");
 // variablen in statement plaatsen
         $sql->bindParam(":Id", $Id);
@@ -84,7 +84,7 @@ values (:Id,:naam)");
     {
         global $conn;
         // maakt statement
-        $sql = $conn->prepare(" SELECT * FROM land");
+        $sql = $conn->prepare(" SELECT * FROM Land");
         $sql->execute();
         foreach ($sql as $land) {
             echo $land["Id"] . " - ";                         //
@@ -94,13 +94,13 @@ values (:Id,:naam)");
         }
     }
 //searchLand-methode:
-//Deze methode zoekt een land op basis van $Id en toont de info
+//Deze methode zoekt een Land op basis van $Id en toont de info
 // Het voert een SQL-query uit met een parameter om de route te selecteren..
     public function searchLand($Id)
     {
         global $conn;
         // sql statement
-        $sql = $conn->prepare("select * from land
+        $sql = $conn->prepare("select * from Land
                                where Id = :Id");
         // variables in statement plaatsen
         $sql->bindParam(":Id", $Id);
@@ -114,20 +114,20 @@ values (:Id,:naam)");
     }
 //deleteLand-methode:
 //Deze methode verwijdert een user uit de database met een gegeven id
-// het voert een SQL-verwijderquery uit met een parameter om een land te verwijderen..
+// het voert een SQL-verwijderquery uit met een parameter om een Land te verwijderen..
     public function deleteLand($Id)
     {
         global $conn;
         //statements
-        $sql = $conn->prepare(" DELETE FROM land
+        $sql = $conn->prepare(" DELETE FROM Land
         where Id = :Id");
         //  variables in de statement
         $sql->bindParam(":Id", $Id);
         $sql->execute();
     }
 //updateLand-methode:
-//Deze methode werkt de gegevens van een bestaand land in de database bij op basis van id
-// Het voert een SQL-updatequery uit om de gegevens van het land te updaten
+//Deze methode werkt de gegevens van een bestaand Land in de database bij op basis van id
+// Het voert een SQL-updatequery uit om de gegevens van het Land te updaten
     public function updateLand($Id)
     {
         global $conn;
@@ -137,7 +137,7 @@ values (:Id,:naam)");
 
 
         // statement
-        $sql = $conn->prepare("     update land
+        $sql = $conn->prepare("     update Land
 									set naam= :naam  
 									where Id= :Id
 								 ");
